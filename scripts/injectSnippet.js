@@ -10,7 +10,7 @@ function injectScript() {
     injectOptimizelySnippet();
   } else if (isWeb === 'false') {
     // Handle Edge client injection
-    injectEdgeClientSnippet();
+    injectEdgeClientScript();
   } else {
     console.log('No valid is_web parameter found. Script injection skipped.');
   }
@@ -56,7 +56,7 @@ function injectOptimizelySnippet() {
   console.log(`Optimizely snippet injected: ${scriptUrl}`);
 }
 
-function injectEdgeClientSnippet() {
+function injectEdgeClientScript() {
   // Parse URL parameters
   const urlParams = new URLSearchParams(window.location.search);
   
@@ -77,11 +77,11 @@ function injectEdgeClientSnippet() {
   document.head.appendChild(metaElement);
   console.log('Content-Type meta tag injected');
   
-  // Get current url
-  const currentUrl = window.location.href;
+  // Get current URL without query parameters
+  const currentUrl = window.location.origin + window.location.pathname;
   
   // Construct the script URL
-  const scriptUrl = `https://ocdndns.com/master_latest/edge-client/v1/${accountId}/${projectId}?url=${currentUrl}`;
+  const scriptUrl = `https://ocdndns.com/master_latest/edge-client/v1/${accountId}/${projectId}?url=${encodeURIComponent(currentUrl)}`;
   
   // Create script element
   const scriptElement = document.createElement('script');
