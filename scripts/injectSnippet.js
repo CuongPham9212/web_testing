@@ -77,11 +77,11 @@ function injectEdgeClientSnippet() {
   document.head.appendChild(metaElement);
   console.log('Content-Type meta tag injected');
   
-  // Get current domain
-  const domain = window.location.hostname;
+  // Get current url
+  const currentUrl = window.location.href;
   
   // Construct the script URL
-  const scriptUrl = `https://ocdndns.com/master_latest/edge-client/v1/${accountId}/${projectId}?url=${domain}`;
+  const scriptUrl = `https://ocdndns.com/master_latest/edge-client/v1/${accountId}/${projectId}?url=${currentUrl}`;
   
   // Create script element
   const scriptElement = document.createElement('script');
