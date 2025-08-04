@@ -39,7 +39,7 @@ function injectOptimizelySnippet() {
   console.log('Content-Type meta tag injected');
   
   // Construct the script URL
-  let scriptUrl = `https://${s3Bucket}`;
+  let scriptUrl = `//${s3Bucket}`;
   if (useS3) {
     scriptUrl += '.s3';
   }
@@ -81,7 +81,7 @@ function injectEdgeClientScript() {
   const currentUrl = window.location.origin + window.location.pathname;
   
   // Construct the script URL
-  const scriptUrl = `https://ocdndns.com/master_latest/edge-client/v1/${accountId}/${projectId}?url=${currentUrl}`;
+  const scriptUrl = `//ocdndns.com/master_latest/edge-client/v1/${accountId}/${projectId}?url=${currentUrl}`;
   
   // Create script element
   const scriptElement = document.createElement('script');
