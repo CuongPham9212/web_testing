@@ -81,7 +81,7 @@ function injectEdgeClientScript() {
   const currentUrl = window.location.origin + window.location.pathname;
   
   // Construct the script URL
-  const scriptUrl = `https://ocdndns.com/master_latest/edge-client/v1/${accountId}/${projectId}?url=${encodeURIComponent(currentUrl)}`;
+  const scriptUrl = `https://ocdndns.com/master_latest/edge-client/v1/${accountId}/${projectId}?url=${currentUrl}`;
   
   // Create script element
   const scriptElement = document.createElement('script');
