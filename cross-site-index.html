@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-site page | Mini Shop QA</title>
+<link rel="icon" href="data:,">
+<!-- CJS-12839 CROSS-SITE. Upload this file as index.html to a PUBLIC repo of ANOTHER GitHub account or organization
+     and enable GitHub Pages (main branch, / root). It is a different site from quynhnguyenepi.github.io because
+     github.io is a public suffix. It must carry the SAME snippet as minishop, or the QA agent reports the wrong project. -->
+<script src="https://cdn.optimizely.com/js/4868003032989696.js"></script>
+<style>
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; margin: 0; color: #1c1c1c; }
+.site-header { border-bottom: 1px solid #ddd; padding: 14px 20px; }
+.logo { font-size: 22px; font-weight: 700; text-decoration: none; color: #1c1c1c; }
+.logo span { color: #0a6; }
+main { max-width: 720px; margin: 0 auto; padding: 24px 20px; }
+</style>
+</head>
+<body data-page="cross-site">
+<header class="site-header">
+  <a id="site-logo" class="logo" href="index.html">Mini<span>Shop</span></a>
+</header>
+<main>
+  <h1 data-qa="qa-title">Cross-site page</h1>
+  <p data-qa="qa-text">QA page for CJS-12839. It lives on another github.io account than the shop, so a journey hop from the shop to this page leaves the site.</p>
+</main>
+</body>
+</html>
